@@ -71,3 +71,15 @@ test("isGameLost should return false if you've guessed less than 7 wrong letters
   // ASSERT
   expect(gameLost).toBe(false);
 });
+
+test("isGameLost should return false if you've guessed less than 7 wrong letters, but more then 6 letters in total", () => {
+  // ARRANGE
+  const word = "javascript";
+  const guesses = ["q", "w", "e", "a", "t", "j","v"];
+
+  // ACT
+  const gameLost = isGameLost(word, guesses);
+
+  // ASSERT
+  expect(gameLost).toBe(false);
+});
